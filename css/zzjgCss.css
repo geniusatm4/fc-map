@@ -1,0 +1,302 @@
+*{
+	outline: none;
+}
+.locationBox {
+	width: 400px;
+	background-color: #fffffe;
+	margin-top: 0px;
+	margin-left: 0px;
+	border-top: 0px;
+	border-left: 0px;
+	overflow: hidden;
+	text-align: left;
+	font-size: 13px;
+}
+
+.locationBox ul, .locationBox li {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+.locationBox ul li {
+	float: left;
+	height: 32px;
+	line-height: 32px;
+}
+
+.drop_btn_01 {
+	position: absolute;
+	top: 0px;
+	right: 1%;
+}
+
+#locationLabel {
+	display: block;
+	float: left;
+	width: 100%;
+	height: 100%;
+	line-height: 28px;
+	position: relative;
+	text-align: left;
+	cursor: pointer;
+}
+
+#locationLabel span {
+	display: block;
+	float: left;
+	text-align: center;
+	height: 100%;
+	width: 70%;
+	overflow: hidden;
+}
+
+#locationLabel i {
+	display: block;
+	float: left;
+	width: 9%;
+	color: #0099cc;
+	font-size: 14px;
+	margin: 0px 4px;
+	line-height: 28px;
+}
+
+.listDiv {
+	padding: 0px;
+	width: 100%;
+}
+
+.listContent {
+	padding: 10px 10px 0px 18px;
+	margin: 0px;
+	line-height: 18px;
+}
+
+.listTitle {
+	padding: 5px 0px 5px 10px;
+	border-bottom: 1px solid #dddddd;
+	color: #333333;
+	position: relative;
+}
+
+.listTitle span {
+	font-size: 13px;
+}
+
+.listTitle span:HOVER {
+	cursor: pointer;
+	color: #0066cc;
+}
+
+.indexList {
+	width: 180px;
+	position: absolute;
+	height: 25px;
+	overflow: hidden;
+	padding-left: 7px;
+	z-index: 100000;
+}
+
+.indexListHover {
+	border-bottom: 2px solid #ccc;
+	height: auto;
+	overflow: auto;
+	background-color: #fffffa;
+	width: 370px;
+}
+
+.indexList ul li {
+	margin-right: 0px;
+	width: 22px;
+	height: 25px !important;
+	text-align: center;
+	font-size: 13px;
+	line-height: 25px;
+	font-weight: bold;
+	color: #aaa;
+}
+
+.indexList ul li.indexAll {
+	width: 30px;
+	font-size: 11px;
+	font-weight: bold;
+	color: #38B206;
+}
+
+.indexList ul li:hover {
+	cursor: pointer;
+	color: #0066cc;
+	font-weight: bold;
+}
+
+.listContent span {
+	display: inline;
+	margin-right: 10px;
+	float: left;
+	cursor: pointer;
+	color: #0066cc;
+}
+
+.listContent span:HOVER {
+	text-decoration: underline;
+}
+
+.searchList {
+	float: right;
+}
+
+.searchList input {
+	width: 120px;
+	height: 20px;
+	padding-left: 5px;
+	padding-right: 20px;
+	border: 0px;
+	border-bottom: 1px solid #999999;
+	margin-right: 10px;
+}
+
+.secondListContentList {
+	
+}
+
+#thiredList .searchList i {
+	font-size: 13px;
+	margin-left: 0px;
+	margin-right: 0px;
+	color: #999;
+	line-height: 25px;
+}
+
+#thiredList .searchList i:HOVER {
+	color: #198585;
+}
+
+.searchList .btn {
+	display: block;
+    cursor: pointer;
+    width: 27px;
+    height: 18px;
+    color: #999;
+    background-color: #fff;
+    border: 0px solid #999999;
+    position: absolute;
+    right: -4px;
+    top: 8px;
+}
+
+.thiredListContent {
+	height: 150px;
+	padding: 10px 5px 10px 5px;
+	font-size: 13px;
+}
+
+.fontGreen {
+	color: #04C240 !important;
+}
+
+.lineListBox {
+	width: 390px;
+	padding-bottom: 8px;
+	padding-left: 10px;
+}
+
+#secondListContent .listBtnX {
+	font-size: 13px;
+	font-weight: bold;
+}
+
+#secondListContent ._listBtnX {
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.lineListBox .lineListRight {
+	width: 320px;
+	float: right;
+}
+
+.lineListBox .lineListRight:HOVER {
+	overflow: auto;
+	height: auto;
+}
+
+.lineListBox .lineListRight span {
+	width: 27%;
+	float: left;
+	overflow: hidden;
+	height: 20px;
+}
+
+.thiredLineGroups {
+	width: 390px;
+  	float: left;
+  	text-align: center;
+}
+
+.thiredLineGroups span, .secondListContent span {
+	width: 11%;
+	float: left;
+	overflow: hidden;
+	height: 20px;
+	text-align: center;
+}
+
+#searchResultBoxByZzjg {
+	width: 365px;
+	float: left;
+	margin-bottom: 5px;
+	padding-bottom: 8px;
+	padding-left: 15px;
+}
+
+#searchResultBoxByZzjg:HOVER {
+	overflow: auto;
+	height: auto;
+}
+
+#searchResultBoxByZzjg span {
+	width: 22%;
+	float: left;
+	overflow: hidden;
+	height: 20px;
+}
+
+.lineListBox .lineListLeft {
+	width: 70px;
+	float: left;
+	overflow: hidden;
+	height: 20px;
+}
+
+.lineListBox .lineListLeft:HOVER {
+	overflow: auto;
+	height: auto;
+}
+
+.lineListBox .lineListLeft span {
+	margin: 0px;
+	color: #0066cc;
+	font-weight: bold;
+	width: inherit;
+}
+
+.addressLink {
+	color: #3d6dcc;
+	cursor: pointer;
+}
+
+.forWaiting {
+	width: 100%;
+	text-align: center;
+}
+
+.closeBtns {
+	background: url(../../zzjgModel/zzjgImg/favDelete.gif) no-repeat;
+	cursor: pointer;
+	width: 10px;
+	height: 10px;
+	position: absolute;
+	right: 10px;
+	top: 8px;
+	z-index: 50001;
+}

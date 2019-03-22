@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>人脸时空分析</title>
+    <link rel="stylesheet" type="text/css" href="http://10.30.27.10:8080/PGIS_S_TileMap/lib/EzServerClient.min.css">
+    <link rel="stylesheet" type="text/css" href="css/layout.css">
+    <link rel="stylesheet" type="text/css" href="css/init.css">
+    <link rel="stylesheet" type="text/css" href="css/defaults.css">
+    <link rel="stylesheet" type="text/css" href="css/cssv2.css">
+    <link rel="stylesheet" type="text/css" href="css/css.css">
+    <link rel="stylesheet" type="text/css" href="js/layer/skin/default/layer.css">
+</head>
+<body>
+<div class="zx-container" id="container">
+    <div class="content" id="mapContent">
+
+        <div class="navbar-list" id="ISL_Tab_list" status="open"
+             style="animation: navbar-left-right 0.6s ease-out 0s 1 normal none running; left: 0px;">
+            <ul id="navbar-list-ul">
+                <li sid="ISL_Cont_police_list" name="线索箱" class="">
+                    <div class="image btn-anbao"></div>
+                    <p>线索箱</p>
+                </li>
+
+                <li sid="ISL_History_Action_list" name="添加线索" class="">
+                    <div class="image btn-police"></div>
+                    <p>添加线索</p>
+                </li>
+                <!-- <li sid="ISL_Cont_kakou_list" name="交通卡口">
+                    <div class="image btn-kakou"></div>
+                    <p>交通卡口</p>
+                </li>
+                <li sid="ISL_Cont_shipin_list" name="全国视频">
+                    <div class="image btn-shipin"></div>
+                    <p>视频监控</p>
+                </li> -->
+                <li id="gpsBtn" sid="ISL_Cont_gpsv1_listXXX" name="时空轴">
+                    <div class="image btn-location"></div>
+                    <p>时空轴</p>
+                </li>
+                <li sid="ISL_Cont_road_listXXX" name="智能分析" class="">
+                    <div class="image btn-roadplan"></div>
+                    <p>智能分析</p>
+                </li>
+                <li id="statusTranformBtn" sid="ISL_Status_Tranform_list" name="操作历史" class="">
+                    <div class="image btn-animation"></div>
+                    <p>操作历史</p>
+                </li>
+                <li id="favCheckBtn" sid="ISL_Cont_fav_list" name="导出" class="">
+                    <div class="image btn-save"></div>
+                    <p>导出</p>
+                </li>
+            </ul>
+            <div class="navbar-navBtn arrow--right" id="navbar-navBtn"></div>
+        </div>
+
+        <div id="ISL_Cont" class="navbar-kanban" status="open"
+             style="display: block; animation: kanbanin .2s ease-out 0s 1 normal none running;"
+             sid="ISL_Big_Action_list">
+            <div class="navbar-kanban-header">
+                <div id="navbar-kanban-Title" class="navbar-kanban-Title">线索箱</div>
+                <div class="navbar-kanban-clear" id="navbar-kanban-clear"></div>
+            </div>
+            <div class="navbar-kanban-content">
+
+                <!--线索箱Start-->
+                <div id="ISL_Cont_police_list" class="navbar-kanban-page page-active">
+                    <!-- status = "theme" || "search" -->
+                    <div id="onlocatData" class="dataListBox" status="theme">
+                        <!-- 搜索结果展示列表 -->
+                        <div id="ISL_Search_Result" sid="search" class="navbar-kanban-child">
+                            <div id="ISL_Search_Result_list">
+                                <div class="searchResultList" id="searchResultListA">
+                                    <div id="totalDataNumA" class="totalDataNum">
+                                        <span>共查询到<b>0</b>条记录</span>
+                                        <span id="returnBtn" title="返回警务专题"><i class="icon-mail-reply"></i></span>
+                                    </div>
+                                    <div id="resultDataListViewA"
+                                         class="list1class mCustomScrollbar _mCS_5 mCS-autoHide mCS_no_scrollbar"
+                                         style="height: 831.5px;">
+                                        <div id="mCSB_5" class="mCustomScrollBox mCS-blue mCSB_vertical mCSB_inside"
+                                             tabindex="0">
+                                            <div id="mCSB_5_container"
+                                                 class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y"
+                                                 style="position:relative; top:0; left:0;" dir="ltr">
+                                                <div id="resultDataListA" class="rllaydiv"></div>
+                                            </div>
+                                            <div id="mCSB_5_scrollbar_vertical"
+                                                 class="mCSB_scrollTools mCSB_5_scrollbar mCS-blue mCSB_scrollTools_vertical"
+                                                 style="display: none;">
+                                                <div class="mCSB_draggerContainer">
+                                                    <div id="mCSB_5_dragger_vertical" class="mCSB_dragger"
+                                                         style="position: absolute; min-height: 30px; top: 0px;"
+                                                         oncontextmenu="return false;">
+                                                        <div class="mCSB_dragger_bar" style="line-height: 30px;"></div>
+                                                    </div>
+                                                    <div class="mCSB_draggerRail"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="footerNumViewA"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 警务专题列表 -->
+                        <div id="onlocatDataList" sid="theme"
+                             class="list1class mCustomScrollbar _mCS_3 mCS-autoHide mCS_no_scrollbar"
+                             style="height: 920px;">
+                            <div id="mCSB_3" class="mCustomScrollBox mCS-blue mCSB_vertical mCSB_inside" tabindex="0">
+                                <div id="mCSB_3_container" class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y"
+                                     style="position:relative; top:0; left:0;" dir="ltr">
+                                    <div class="detail_info_tabs">
+
+                                        <div class="detail_info_tabbtn " id="person_detail_trajectory_info">
+                                            保存
+                                        </div>
+                                        <div class="detail_info_tabbtn " id="person_detail_relate_info">
+                                            读取
+                                        </div>
+                                    </div>
+                                    <div id="rllaydivList" class="rllaydiv">
+                                        <ul class="rlmainUL">
+
+                                            <li class="rlmainli">
+
+                                                <div><img class="rlmainliimg" src="newImg/gzxx.png"></div>
+
+                                                <div class="rllidiv"><p><span name="重点人员"
+                                                                              class="rllifirstp">重点人员</span></p>
+
+                                                    <p class="rlabovep" id="重点人员">
+                                                    <div id="target_person_cont">
+
+                                                    </div>
+                                                    </p>
+                                                </div>
+                                                <div style="clear:both;"></div>
+                                            </li>
+
+                                            <li class="rlmainli">
+                                                <div><img class="rlmainliimg" src="newImg/yj.png"></div>
+                                                <div class="rllidiv"><p><span name="重点车辆" class="rllifirstp">重点车辆</span>
+                                                </p>
+                                                    <p class="rlabovep" id="应急专题"><span class="rlsub"
+                                                                                        onclick="showCar('沪A00001')"
+                                                                                        layername="POI_JJZX"
+                                                                                        owner="undefined" group="PGIS"
+                                                                                        cname="沪A11111">沪A00001</span>
+                                                    </p></div>
+                                                <div style="clear:both;"></div>
+                                            </li>
+                                            <li class="rlmainli">
+                                                <div><img class="rlmainliimg" src="newImg/zfyshtt.png"></div>
+                                                <div class="rllidiv"><p><span name="重点案件"
+                                                                              class="rllifirstp">重点案件</span></p>
+                                                    <p class="rlabovep" id=""><span class="rlsub"
+                                                                                    layername="POI_DZJGJSYDW"
+                                                                                    owner="undefined"
+                                                                                    group="PGIS"
+                                                                                    cname="301大吃大喝案">301大吃大喝案案件</span>
+                                                    </p></div>
+                                                <div style="clear:both;"></div>
+                                            </li>
+
+
+                                            <li class="rlmainli">
+                                                <div><img class="rlmainliimg" src="newImg/cyxx.png"></div>
+                                                <div class="rllidiv"><p><span name="重点WIFI、手机"
+                                                                              class="rllifirstp">重点WIFI、手机</span></p>
+                                                    <p class="rlabovep" id="常用信息专题"><span class="rlsub"
+                                                                                          layername="POI_CZMT"
+                                                                                          owner="undefined"
+                                                                                          group="PGIS"
+                                                                                          cname="车站码头">13999999999</span><span
+                                                            class="rlsub" layername="POI_LGJD" owner="undefined"
+                                                            group="PGIS" cname="旅馆">13888888888</span><span
+                                                            class="rlsub"
+                                                            layername="POI_WB"
+                                                            owner="undefined"
+                                                            group="PGIS"
+                                                            cname="网吧">88:88:88:88:88</span>
+                                                    </p>
+
+                                                    <div style="clear:both;"></div>
+                                            </li>
+                                            <li class="rlmainli">
+                                                <div><img class="rlmainliimg" src="newImg/dlss.png"></div>
+                                                <div class="rllidiv"><p><span name="重点区域"
+                                                                              class="rllifirstp">重点区域</span></p>
+                                                    <p class="rlabovep" id="道路设施专题"><span class="rlsub"
+                                                                                          layername="POI_SFZ"
+                                                                                          owner="undefined" group="PGIS"
+                                                                                          cname="张江高科地铁站">张江高科地铁站</span><span
+                                                            class="rlsub" layername="POI_GSFWQ" owner="undefined"
+                                                            group="PGIS" cname="唐镇地铁站">唐镇地铁站</span>
+                                                    </p></div>
+                                                <div style="clear:both;"></div>
+                                            </li>
+                                            <li class="rlmainli">
+                                                <div><img class="rlmainliimg" src="newImg/gzxx.png"></div>
+                                                <div class="rllidiv"><p><span name="重点前端相机"
+                                                                              class="rllifirstp">重点前端相机</span></p>
+                                                    <p class="rlabovep" id="公众信息专题"><span class="rlsub"
+                                                                                          layername="POI_SHFW"
+                                                                                          owner="undefined" group="PGIS"
+                                                                                          cname="碧波路祖冲之路东枪机1">碧波路祖冲之路东枪机1</span><span
+                                                            class="rlsub" layername="POI_XX" owner="undefined"
+                                                            group="PGIS" cname="碧波路祖冲之路东球机1">碧波路祖冲之路东球机1</span><span
+                                                            class="rlsub"
+                                                            layername="POI_XXYY"
+                                                            owner="undefined"
+                                                            group="PGIS"
+                                                            cname="星创科技大厦二号楼门口（进）">星创科技大厦二号楼门口（进）</span>
+                                                    </p></div>
+                                                <div style="clear:both;"></div>
+                                            </li>
+                                            <li class="rlmainli">
+                                                <div><img class="rlmainliimg" src="newImg/zfyshtt.png"></div>
+                                                <div class="rllidiv"><p><span name="重点POI"
+                                                                              class="rllifirstp">重点POI</span></p>
+                                                    <p class="rlabovep" id="政府与社会团体"><span class="rlsub"
+                                                                                           layername="POI_DZJGJSYDW"
+                                                                                           owner="undefined"
+                                                                                           group="PGIS"
+                                                                                           cname="广兰路麦当劳">广兰路麦当劳</span><span
+                                                            class="rlsub" layername="POI_JTGL" owner="undefined"
+                                                            group="PGIS" cname="星创科技广场食堂">星创科技广场食堂</span>
+                                                    </p></div>
+                                                <div style="clear:both;"></div>
+                                            </li>
+                                            <ul class="rlmainUL"></ul>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div id="mCSB_3_scrollbar_vertical"
+                                     class="mCSB_scrollTools mCSB_3_scrollbar mCS-blue mCSB_scrollTools_vertical"
+                                     style="display: none;">
+                                    <div class="mCSB_draggerContainer">
+                                        <div id="mCSB_3_dragger_vertical" class="mCSB_dragger"
+                                             style="position: absolute; min-height: 30px; top: 0px; height: 0px; display: block; max-height: 861px;"
+                                             oncontextmenu="return false;">
+                                            <div class="mCSB_dragger_bar" style="line-height: 30px;"></div>
+                                        </div>
+                                        <div class="mCSB_draggerRail"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--线索箱End-->
+
+
+                <!--操作历史Start-->
+                <div id="ISL_History_Action_list" class="navbar-kanban-page">
+                    <!-- status = "theme" || "search" -->
+                    <div id="onlocatData" class="dataListBox" status="theme">
+                        <!-- 搜索结果展示列表 -->
+                        <div id="ISL_Search_Result" sid="search" class="navbar-kanban-child">
+                            <div id="ISL_Search_Result_list">
+                                <div class="searchResultList" id="searchResultListA">
+                                    <div id="totalDataNumA" class="totalDataNum">
+                                        <span>共查询到<b>0</b>条记录</span>
+                                        <span id="returnBtn" title="返回警务专题"><i class="icon-mail-reply"></i></span>
+                                    </div>
+                                    <div id="resultDataListViewA"
+                                         class="list1class mCustomScrollbar _mCS_5 mCS-autoHide mCS_no_scrollbar"
+                                         style="height: 831.5px;">
+                                        <div id="mCSB_5" class="mCustomScrollBox mCS-blue mCSB_vertical mCSB_inside"
+                                             tabindex="0">
+                                            <div id="mCSB_5_container"
+                                                 class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y"
+                                                 style="position:relative; top:0; left:0;" dir="ltr">
+                                                <div id="resultDataListA" class="rllaydiv"></div>
+                                            </div>
+                                            <div id="mCSB_5_scrollbar_vertical"
+                                                 class="mCSB_scrollTools mCSB_5_scrollbar mCS-blue mCSB_scrollTools_vertical"
+                                                 style="display: none;">
+                                                <div class="mCSB_draggerContainer">
+                                                    <div id="mCSB_5_dragger_vertical" class="mCSB_dragger"
+                                                         style="position: absolute; min-height: 30px; top: 0px;"
+                                                         oncontextmenu="return false;">
+                                                        <div class="mCSB_dragger_bar" style="line-height: 30px;"></div>
+                                                    </div>
+                                                    <div class="mCSB_draggerRail"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="footerNumViewA"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 警务专题列表 -->
+                        <div id="onlocatDataList" sid="theme"
+                             class="list1class mCustomScrollbar _mCS_3 mCS-autoHide mCS_no_scrollbar"
+                             style="height: 920px;">
+                            <div id="mCSB_3" class="mCustomScrollBox mCS-blue mCSB_vertical mCSB_inside" tabindex="0">
+                                <div id="mCSB_3_container" class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y"
+                                     style="position:relative; top:0; left:0;" dir="ltr">
+                                    <div class="detail_info_tabs">
+                                        <div class="detail_info_tabbtn" id="hot_area_analysis_btn">技战法
+                                        </div>
+                                        <div class="detail_info_tabbtn " id="person_detail_trajectory_info">
+                                            保存
+                                        </div>
+                                        <div class="detail_info_tabbtn " id="person_detail_relate_info">
+                                            读取
+                                        </div>
+                                    </div>
+                                    <div id="rllaydivList" class="rllaydiv">
+                                        <ul class="rlmainUL">
+
+                                            <li class="rlmainli">
+
+                                                <div><img class="rlmainliimg" src="newImg/gzxx.png"></div>
+
+                                                <div class="rllidiv"><p><span name="重点人员"
+                                                                              class="rllifirstp">重点人员</span></p>
+
+                                                    <p class="rlabovep" id="重点人员">
+                                                    <div id="target_person_cont">
+
+                                                    </div>
+                                                    </p>
+                                                </div>
+                                                <div style="clear:both;"></div>
+                                            </li>
+
+                                            <li class="rlmainli">
+                                                <div><img class="rlmainliimg" src="newImg/yj.png"></div>
+                                                <div class="rllidiv"><p><span name="重点车辆" class="rllifirstp">重点车辆</span>
+                                                </p>
+                                                    <p class="rlabovep" id="应急专题"><span class="rlsub"
+                                                                                        onclick="showCar('沪A00001')"
+                                                                                        layername="POI_JJZX"
+                                                                                        owner="undefined" group="PGIS"
+                                                                                        cname="沪A11111">沪A00001</span>
+                                                    </p></div>
+                                                <div style="clear:both;"></div>
+                                            </li>
+                                            <li class="rlmainli">
+                                                <div><img class="rlmainliimg" src="newImg/zfyshtt.png"></div>
+                                                <div class="rllidiv"><p><span name="重点案件"
+                                                                              class="rllifirstp">重点案件11</span></p>
+                                                    <p class="rlabovep" id=""><span class="rlsub"
+                                                                                    layername="POI_DZJGJSYDW"
+                                                                                    owner="undefined"
+                                                                                    group="PGIS"
+                                                                                    cname="301大吃大喝案">301大吃大喝案案件</span><span
+                                                            class="rlsub" layername="POI_JTGL" owner="undefined"
+                                                            group="PGIS" cname="张三肥胖之谜">张三肥胖之谜案件</span>
+                                                    </p></div>
+                                                <div style="clear:both;"></div>
+                                            </li>
+
+
+                                            <li class="rlmainli">
+                                                <div><img class="rlmainliimg" src="newImg/cyxx.png"></div>
+                                                <div class="rllidiv"><p><span name="重点WIFI、手机"
+                                                                              class="rllifirstp">重点WIFI、手机</span></p>
+                                                    <p class="rlabovep" id="常用信息专题"><span class="rlsub"
+                                                                                          layername="POI_CZMT"
+                                                                                          owner="undefined"
+                                                                                          group="PGIS"
+                                                                                          cname="车站码头">13999999999</span><span
+                                                            class="rlsub" layername="POI_LGJD" owner="undefined"
+                                                            group="PGIS" cname="旅馆">13888888888</span><span
+                                                            class="rlsub"
+                                                            layername="POI_WB"
+                                                            owner="undefined"
+                                                            group="PGIS"
+                                                            cname="网吧">88:88:88:88:88</span>
+                                                    </p>
+
+                                                    <div style="clear:both;"></div>
+                                            </li>
+                                            <li class="rlmainli">
+                                                <div><img class="rlmainliimg" src="newImg/dlss.png"></div>
+                                                <div class="rllidiv"><p><span name="重点区域"
+                                                                              class="rllifirstp">重点区域</span></p>
+                                                    <p class="rlabovep" id="道路设施专题"><span class="rlsub"
+                                                                                          layername="POI_SFZ"
+                                                                                          owner="undefined" group="PGIS"
+                                                                                          cname="张江高科地铁站">张江高科地铁站</span><span
+                                                            class="rlsub" layername="POI_GSFWQ" owner="undefined"
+                                                            group="PGIS" cname="唐镇地铁站">唐镇地铁站</span>
+                                                    </p></div>
+                                                <div style="clear:both;"></div>
+                                            </li>
+                                            <li class="rlmainli">
+                                                <div><img class="rlmainliimg" src="newImg/gzxx.png"></div>
+                                                <div class="rllidiv"><p><span name="重点前端相机"
+                                                                              class="rllifirstp">重点前端相机</span></p>
+                                                    <p class="rlabovep" id="公众信息专题"><span class="rlsub"
+                                                                                          layername="POI_SHFW"
+                                                                                          owner="undefined" group="PGIS"
+                                                                                          cname="碧波路祖冲之路东枪机1">碧波路祖冲之路东枪机1</span><span
+                                                            class="rlsub" layername="POI_XX" owner="undefined"
+                                                            group="PGIS" cname="碧波路祖冲之路东球机1">碧波路祖冲之路东球机1</span><span
+                                                            class="rlsub"
+                                                            layername="POI_XXYY"
+                                                            owner="undefined"
+                                                            group="PGIS"
+                                                            cname="星创科技大厦二号楼门口（进）">星创科技大厦二号楼门口（进）</span>
+                                                    </p></div>
+                                                <div style="clear:both;"></div>
+                                            </li>
+                                            <li class="rlmainli">
+                                                <div><img class="rlmainliimg" src="newImg/zfyshtt.png"></div>
+                                                <div class="rllidiv"><p><span name="重点POI"
+                                                                              class="rllifirstp">重点POI</span></p>
+                                                    <p class="rlabovep" id="政府与社会团体"><span class="rlsub"
+                                                                                           layername="POI_DZJGJSYDW"
+                                                                                           owner="undefined"
+                                                                                           group="PGIS"
+                                                                                           cname="广兰路麦当劳">广兰路麦当劳</span><span
+                                                            class="rlsub" layername="POI_JTGL" owner="undefined"
+                                                            group="PGIS" cname="星创科技广场食堂">星创科技广场食堂</span>
+                                                    </p></div>
+                                                <div style="clear:both;"></div>
+                                            </li>
+                                            <ul class="rlmainUL"></ul>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div id="mCSB_3_scrollbar_vertical"
+                                     class="mCSB_scrollTools mCSB_3_scrollbar mCS-blue mCSB_scrollTools_vertical"
+                                     style="display: none;">
+                                    <div class="mCSB_draggerContainer">
+                                        <div id="mCSB_3_dragger_vertical" class="mCSB_dragger"
+                                             style="position: absolute; min-height: 30px; top: 0px; height: 0px; display: block; max-height: 861px;"
+                                             oncontextmenu="return false;">
+                                            <div class="mCSB_dragger_bar" style="line-height: 30px;"></div>
+                                        </div>
+                                        <div class="mCSB_draggerRail"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--操作历史End-->
+
+
+            </div>
+        </div>
+
+        <div id="ISL_Clue" class="clue-kanban" status="open"
+             style="display: none; animation: kanbanin .2s ease-out 0s 1 normal none running;"
+             sid="ISL_Big_Action_list">
+            <div class="clue-kanban-header">
+                <div id="clue-person-kanban-title" class="clue-kanban-Title">人员资料</div>
+                <div class="clue-kanban-clear" id="clue-kanban-clear"></div>
+            </div>
+
+            <div class="clue-kanban-content">
+                <div class="detail_info_container">
+                    <div class="detail_info_tabs" id="person_detail_info_tabs">
+                        <div class="detail_info_tabbtn active" sid="person_detail_base_info_page"
+                             id="person_detail_base_info">基础信息
+                        </div>
+                        <div class="detail_info_tabbtn " sid="person_detail_trajectory_info_page"
+                             id="person_detail_trajectory_info">
+                            人员轨迹
+                        </div>
+                        <div class="detail_info_tabbtn " sid="person_detail_relate_info_page"
+                             id="person_detail_relate_info">
+                            关联数据
+                        </div>
+                    </div>
+                    <div class="detail_info_content_page" id="person_detail_info_content_page">
+                        <!-- 基础信息面板 -->
+                        <div class="detail_info_content active" id="person_detail_base_info_page">
+                            <div>
+                                <span style="float: left;"> 姓名：</span>
+                                <div style="float: left;" id="detail_info_person_name">刘德华</div>
+                                <input type="hidden" id="detail_info_person_id"/>
+                            </div>
+                            <div>
+                                <span>性别：</span>男
+                            </div>
+                            <div>
+                                <span>所在库：</span>在逃人员、重点布控
+                            </div>
+                            <div>
+                                <span>是否显示轨迹：</span><input type="checkbox" id="showPersonTrajectoryChkBox" checked>
+                            </div>
+                            <div>
+                                <span>....</span>....
+                            </div>
+                        </div>
+                        <!--人员轨迹数据-->
+                        <div class="detail_info_content" id="person_detail_trajectory_info_page">
+                            <div class="common-action-div">
+                                <button>人脸轨迹</button>
+                                <button>WIFI轨迹</button>
+                                <button>车辆轨迹</button>
+                            </div>
+                            <ul id="person_trajectory_detail">
+                            </ul>
+                        </div>
+                        <!--人员关联数据-->
+                        <div class="detail_info_content" id="person_detail_relate_info_page">
+                            <div class="common-action-div"><button>落脚点分析</button><button id="findRelatedBtn">搜索关联数据</button></div><ul id="person_relate_detail"><li class="common-relate-info-detail"><img src="newImg/mobile.png"/><div><div><span>伴行手机：</span>13501659260</div><div><button>显示轨迹</button><button>详细信息</button><button>添加至线索箱</button></div></div></li><li class="common-relate-info-detail"><img src="newImg/mobile.png"/><div><div><span>伴行MAC：</span>88:88:88:88:88</div><div><button>显示轨迹</button><button>详细信息</button><button>添加至线索箱</button></div></div></li><li class="common-relate-info-detail"><img src="newImg/car_com.png"/><div><div><span>伴行车辆：</span>沪A00001</div><div><button>显示轨迹</button><button>详细信息</button><button>添加至线索箱</button></div></div></li><li class="common-relate-info-detail"><img src="newImg/car_driver.png"/><div><div><span>驾驶车辆：</span>沪A88888</div><div><button>显示轨迹</button><button>详细信息</button><button>添加至线索箱</button></div></div></li><li class="common-relate-info-detail"><img src="newImg/car_passenger.png"/><div><div><span>乘坐车辆：</span>沪A77777</div><div><button>显示轨迹</button><button>详细信息</button><button>添加至线索箱</button></div></div></li><li class="common-relate-info-detail"><img src="newImg/source_case.png"/><div><div><span>关联案件：</span>南京西路扒窃案件01</div><div><button>点位高亮</button><button>详细信息</button><button>添加至线索箱</button></div></div></li><li class="common-relate-info-detail"><img src="newImg/house.png"/><div><div><span>居住地址：</span>南京西路18弄18号1808</div><div><button>点位高亮</button><button>详细信息</button><button>添加至线索箱</button></div></div></li><li class="common-relate-info-detail"><img src="newImg/company.png"/><div><div><span>工作地址：</span>南京西路18弄18号1808</div><div><button>点位高亮</button><button>详细信息</button><button>添加至线索箱</button></div></div></li></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="ISL_Clue_Car" class="clue-kanban" status="open"
+             style="display: none; animation: kanbanin .2s ease-out 0s 1 normal none running;"
+             sid="ISL_Big_Action_list">
+            <div class="clue-kanban-header">
+                <div id="clue-car-kanban-title" class="clue-kanban-Title">车辆资料</div>
+                <div class="clue-kanban-clear" id="clue-kanban-car-clear"></div>
+            </div>
+
+            <div class="clue-kanban-content">
+                <div class="detail_info_container">
+                    <div class="detail_info_tabs" id="car_detail_info_tabs">
+                        <div class="detail_info_tabbtn active" sid="car_detail_base_info_page"
+                             id="car_detail_base_info">基础信息
+                        </div>
+                        <div class="detail_info_tabbtn " sid="car_detail_trajectory_info_page"
+                             id="car_detail_trajectory_info">
+                            车辆轨迹
+                        </div>
+                        <div class="detail_info_tabbtn " sid="car_detail_relate_info_page"
+                             id="car_detail_relate_info">
+                            关联数据
+                        </div>
+                    </div>
+                    <div class="detail_info_content_page" id="car_detail_info_content_page">
+                        <!-- 基础信息面板 -->
+                        <div class="detail_info_content active" id="car_detail_base_info_page">
+                            <div>
+                                <span style="float: left;"> 车主：</span>
+                                <div style="float: left;" id="detail_info_car_name">刘德华</div>
+                            </div>
+                            <div>
+                                <span>驾驶人档案：</span>张三
+                            </div>
+                            <div>
+                                <span>乘坐人档案：</span>罗纳尔多、马拉多纳
+                            </div>
+                            <div>
+                                <span>落脚点：</span>....
+                            </div>
+                            <div>
+                                <span>出没地：</span>....
+                            </div>
+                            <div>
+                                <span>违章信息：</span>....
+                            </div>
+                            <div>
+                                <span>...：</span>....
+                            </div>
+                        </div>
+                        <!--人员轨迹数据-->
+                        <div class="detail_info_content" id="car_detail_trajectory_info_page">
+                            <div class="common-action-div">
+                                <button>人脸轨迹</button>
+                                <button>WIFI轨迹</button>
+                                <button>车辆轨迹</button>
+                            </div>
+                            <ul id="car_trajectory_detail">
+                            </ul>
+                        </div>
+                        <!--人员关联数据-->
+                        <div class="detail_info_content" id="car_detail_relate_info_page">
+                            <div class="common-action-div"><button>落脚点分析</button><button>搜索关联数据</button></div><ul id="car_relate_detail"><li class="common-relate-info-detail"><img src="newImg/mobile.png"/><div><div><span>伴行手机：</span>13501659260</div><div><button>显示轨迹</button><button>详细信息</button><button>添加至线索箱</button></div></div></li><li class="common-relate-info-detail"><img src="newImg/mobile.png"/><div><div><span>伴行MAC：</span>88:88:88:88:88</div><div><button>显示轨迹</button><button>详细信息</button><button>添加至线索箱</button></div></div></li><li class="common-relate-info-detail"><img src="newImg/car_com.png"/><div><div><span>伴行车辆：</span>沪A00001</div><div><button>显示轨迹</button><button>详细信息</button><button>添加至线索箱</button></div></div></li><li class="common-relate-info-detail"><img src="newImg/car_driver.png"/><div><div><span>驾驶车辆：</span>沪A88888</div><div><button>显示轨迹</button><button>详细信息</button><button>添加至线索箱</button></div></div></li><li class="common-relate-info-detail"><img src="newImg/car_passenger.png"/><div><div><span>乘坐车辆：</span>沪A77777</div><div><button>显示轨迹</button><button>详细信息</button><button>添加至线索箱</button></div></div></li><li class="common-relate-info-detail"><img src="newImg/source_case.png"/><div><div><span>关联案件：</span>南京西路扒窃案件01</div><div><button>点位高亮</button><button>详细信息</button><button>添加至线索箱</button></div></div></li><li class="common-relate-info-detail"><img src="newImg/house.png"/><div><div><span>居住地址：</span>南京西路18弄18号1808</div><div><button>点位高亮</button><button>详细信息</button><button>添加至线索箱</button></div></div></li><li class="common-relate-info-detail"><img src="newImg/company.png"/><div><div><span>工作地址：</span>南京西路18弄18号1808</div><div><button>点位高亮</button><button>详细信息</button><button>添加至线索箱</button></div></div></li></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+</div>
+<script type="text/javascript" src="http://10.30.27.10:8080/PGIS_S_TileMap/lib/EzMapAPI.js"></script>
+<script type="text/javascript" src="http://10.30.27.10:8080/PGIS_S_TileMap/lib/EzServerClient.min.js"></script>
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="js/layer/layer.js"></script>
+<script type="text/javascript" src="map.js"></script>
+<script type="text/javascript" src="person.js"></script>
+<script type="text/javascript" src="car.js"></script>
+</body>
+</html>
+	

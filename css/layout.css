@@ -1,0 +1,1548 @@
+@charset "utf-8";
+
+
+
+.common-action-div  {
+    padding-top: 12px;
+    text-align: center;
+}
+
+.common-action-div button {
+    color: rgb(255, 255, 255);
+    background-color: #00BDFF;
+    padding: 0.2rem 0.2rem;
+    margin: 0 0.2rem;
+    font-size: 0.5rem;
+    border-radius: 0.2rem;
+    color: #fff;
+    border: 0.05rem solid #295C78;
+    cursor: pointer;
+}
+
+.target-person-div {
+    float: left;
+    margin-right: 12px;
+    text-align: center;
+}
+
+.target-person-div .main-person {
+    width: 64px;
+    height: 64px;
+    border-radius: 45px;
+    border-style: outset;
+    border-width: 3pt;
+    border-color: #F44336;
+}
+
+.target-person-div .relate-person {
+
+    width: 64px;
+    height: 64px;
+    border-radius: 45px;
+    border-style: outset;
+    border-width: 3pt;
+    border-color: #009eff;
+}
+
+.target-person-div span {
+    color: white;
+    font-size: 22px;
+    text-align: center;
+}
+
+.common-trajectory-detail {
+    margin: 7px;
+    padding: 13px;
+    float: left;
+    width: -webkit-fill-available;
+    border-bottom: solid #03A9F4 1px
+}
+
+.common-trajectory-detail img {
+    float: left;
+    border: solid #03A9F4 2px;
+}
+
+.common-relate-info-detail {
+    margin: 7px;
+    padding: 13px;
+    float: left;
+    width: -webkit-fill-available;
+    border-bottom: solid #03A9F4 1px
+}
+
+.common-relate-info-detail img {
+    float: left;
+    width: 32px;
+}
+
+.common-relate-info-detail button {
+    color: rgb(255, 255, 255);
+    background-color: #00BDFF;
+    padding: 0.2rem 0.2rem;
+    margin: 0 0.2rem;
+    font-size: 0.5rem;
+    border-radius: 0.2rem;
+    background-color: transparent;
+    color: #fff;
+    border: 0.05rem solid #295C78;
+    cursor: pointer;
+}
+
+/* CSS Document */
+
+/* 顶层容器container样式 */
+.zx-container {
+    width: 100%;
+    height: 100%;
+    /* flexbox 方案 */
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 0;
+}
+
+/* header 样式布局区域 */
+.header {
+    /* 高度调整为百分比模式，以防大屏展示的分辨率问题 */
+    height: 3.5rem;
+    width: 100%;
+
+    /* 背景颜色 */
+    /*background-color: rgba(5, 14, 31, 1); */
+
+    background-color: rgba(15, 14, 30, 1);
+
+    /* flexbox 布局模式 */
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    /* 定位 */
+    position: relative;
+}
+
+.detail_info_content_page{
+    height: max-content;
+
+}
+
+/* 新的样式头--start */
+
+.header .header_1 {
+    width: 28rem;
+    height: 100%;
+    background-image: url(../newImg/header/banner.png);
+    background-size: 28rem 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.header_1 .logo {
+    width: 2.4rem;
+    height: 2.5rem;
+    background-image: url(../newImg/header/logo.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-left: 1.2rem;
+}
+
+.header_1 .org {
+    color: #FFF;
+    font-size: 1.6rem;
+    font-weight: bolder;
+    margin-left: 1.2rem;
+    margin-top: -0.25rem;
+}
+
+.header_1 .title {
+    font-weight: bolder;
+    color: #DDE0E9;
+    font-size: 1.3rem;
+    margin-left: 1.2rem;
+}
+
+.header .header_2 {
+    height: 100%;
+    flex-grow: 1;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: -1.1rem;
+}
+
+.header_2 .scale_area {
+    height: 100%;
+    background-image: url('../newImg/header/scale.png');
+    background-size: contain;
+    background-repeat: repeat-x;
+    flex: 1;
+}
+
+.header_2 .fixed_area {
+    width: 6rem;
+    height: 100%;
+    background-image: url('../newImg/header/left_left.png');
+    background-size: 6rem 100%;
+    background-repeat: no-repeat;
+}
+
+.header .header_3 {
+    width: 33rem;
+    height: 100%;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+}
+
+.header_3 .block {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+}
+
+.block .block_logo {
+    width: 3.0rem;
+    height: 3.0rem;
+    background-image: url(../newImg/header/circle.gif);
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: .35rem .1rem;
+    position: relative;
+}
+
+.block_logo span {
+    color: #1bfff2;
+    font-size: .7rem;
+    display: block;
+    width: 2rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.block .block_number {
+    width: 5rem;
+    color: #1bfff2;
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+.block .block_number_precent {
+    width: 3rem;
+    color: #1bfff2;
+    font-size: 1.3rem;
+    text-align: center;
+    display: none;
+}
+
+.header .header_4 {
+    height: 100%;
+    flex-grow: 1;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    position: relative;
+}
+
+.header_4 .fixed_area {
+    width: 6rem;
+    height: 100%;
+    background-image: url(../newImg/header/right_right.png);
+    background-size: 6rem 100%;
+    background-repeat: no-repeat;
+}
+
+.header_4 .scale_area {
+    height: 100%;
+    background-image: url('../newImg/header/scale.png');
+    background-size: contain;
+    background-repeat: repeat-x;
+    flex: 1;
+}
+
+.header_4 .links {
+    position: absolute;
+    right: 1rem;
+    bottom: 0.75rem;
+    font-size: 0.8rem;
+}
+
+.links a {
+    margin-right: .5rem;
+    color: #01beff;
+}
+
+/* 新的样式头--end */
+
+.header .left {
+    width: 38%;
+    height: 100%;
+    /* flexbox方案 */
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+/* header 左边样式 */
+.left .img_scale {
+    flex-grow: 1;
+    height: 100%;
+    background-image: url('../newImg/img_scale.png');
+    background-repeat: repeat-x;
+}
+
+.left .img_fix_left {
+    width: 6rem;
+    height: 100%;
+    background-image: url('/newImg/left_left.png');
+}
+
+.left .header-datetime {
+    width: 9.3rem;
+    height: 100%;
+    text-align: center;
+    line-height: 3;
+}
+
+/* header middle样式 */
+.header .middle_float {
+    /* 尺寸 */
+    width: 29.1rem;
+    height: 5.1rem;
+    color: #F6F6F6;
+    font-family: 微软雅黑;
+    z-index: 60;
+    background-image: url('../newImg/top_middle.png');
+    /* 定位 */
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    /* flexbox方案 */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.middle_float h1 {
+    font-size: 1.9rem;
+    margin-bottom: 0.15rem;
+    letter-spacing: 0.25rem;
+}
+
+.middle_float p {
+    font-size: 0.9rem;
+    margin-bottom: 0.9rem;
+}
+
+.header-datetime .pTime {
+    color: #01beff;
+    font-family: 微软雅黑;
+    font-size: 1.1rem;
+    font-weight: bolder;
+}
+
+.header-datetime .pDate {
+    color: #01beff;
+    font-family: 微软雅黑;
+    font-size: 0.7rem;
+}
+
+.left .img_left_middle {
+    width: 9.3rem;
+    height: 100%;
+    background-image: url('../newImg/left_middle.png');
+}
+
+.header .middle {
+    width: 24%;
+    height: 100%;
+    color: rgba(229, 230, 232, 1);
+}
+
+.header .right {
+    width: 38%;
+    height: 100%;
+    /* flexbox方案 */
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.right .img_right_middle {
+    width: 9.3rem;
+    height: 100%;
+    background-image: url('../newImg/right_middle.png');
+}
+
+.right .police_data {
+    width: 9.3rem;
+    height: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.police_data .policeLabel {
+    margin-top: 0.25rem;
+    width: 2rem;
+    font-size: 0.7rem;
+    color: #02A2DC;
+}
+
+.police_data .header-policeData {
+    font-size: 1.5rem;
+    margin-right: 0.1rem;
+}
+
+.header-policeData span {
+    border: 0.05rem solid #0A3E62;
+    color: #02A2DC;
+    font-weight: bolder;
+    font-family: sans-serif;
+    margin: 0 0.05rem;
+}
+
+.right .img_fix_right {
+    width: 6rem;
+    height: 100%;
+    background-image: url('../newImg/right_right.png');
+}
+
+.right .img_scale {
+    flex-grow: 1;
+    height: 100%;
+    background-image: url('../newImg/img_scale.png');
+    background-repeat: repeat-x;
+}
+
+/* content 样式布局区域 */
+.content {
+    /* 自动填充满 */
+    flex-grow: 2;
+    height: 100%;
+    /* flexbox方案处理分栏布局 */
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+
+    /* 定位样式：相对定位样式 */
+    position: relative;
+}
+
+/* 左侧导航及其内容面板样式 */
+
+/* 导航按钮列表样式 */
+.content .navbar-list {
+    /* 定位样式 */
+    position: absolute;
+    bottom: 0.5rem;
+    /* 7个尺寸为3.4rem的按钮区域+部分点击按钮区域 */
+    left: -25rem;
+
+    /* 图层叠加顺序 */
+    z-index: 60;
+
+    /* flexbox方案 */
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.content .navbar-navBtn {
+
+    width: 3rem;
+    height: 4rem;
+    text-align: center;
+
+    background-repeat: no-repeat;
+    background-position: 70% 50%;
+
+    background-color: rgba(45, 45, 76, .8);
+
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+}
+
+.navbar-list ul {
+
+    /* flexbox布局方案 */
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: flex-end;
+
+    background-color: rgba(45, 45, 76, .8);
+}
+
+.navbar-list li {
+    /* 设置每一个元素的尺寸 */
+    width: 4rem;
+    height: 4rem;
+    box-sizing: border-box;
+
+    text-align: center;
+    /* zhzx--Nav Title Style */
+    font-size: 0.7rem;
+    color: white;
+}
+
+.navbar-list li:HOVER {
+    cursor: pointer;
+    -webkit-transition: background 0.5s linear 0s;
+    transition: background 0.5s linear 0s;
+}
+
+.navbar-list .active {
+    color: #01beff;
+}
+
+.navbar-list .image {
+    margin-top: 0.3rem;
+    width: 4rem;
+    height: 2.0rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.navbar-list .btn-anbao {
+    background-image: url('../newImg/anbao.png');
+}
+
+.navbar-list .btn-anbao--focus {
+    background-image: url('../newImg/anbao_focus.png');
+}
+
+.navbar-list .btn-search {
+    background-image: url('../newImg/search.png');
+}
+
+.navbar-list .btn-search--focus {
+    background-image: url('../newImg/search_focus.png');
+}
+
+.navbar-list .btn-police {
+    background-image: url('../newImg/police.png');
+}
+
+.navbar-list .btn-police--focus {
+    background-image: url('../newImg/police_focus.png');
+}
+
+.navbar-list .btn-kakou {
+    background-image: url('../newImg/kakou.png');
+}
+
+.navbar-list .btn-kakou--focus {
+    background-image: url('../newImg/kakou_focus.png');
+}
+
+.navbar-list .btn-shipin {
+    background-image: url('../newImg/shipin.png');
+}
+
+.navbar-list .btn-shipin--focus {
+    background-image: url('../newImg/shipin_focus.png');
+}
+
+.navbar-list .btn-location {
+    background-image: url('../newImg/location.png');
+}
+
+.navbar-list .btn-location--focus {
+    background-image: url('../newImg/location_focus.png');
+}
+
+.navbar-list .btn-roadplan {
+    background-image: url('../newImg/roadplan.png');
+}
+
+.navbar-list .btn-roadplan--focus {
+    background-image: url('../newImg/roadplan_focus.png');
+}
+
+.navbar-list .btn-track {
+    background-image: url('../newImg/track.png');
+}
+
+.navbar-list .btn-track--focus {
+    background-image: url('../newImg/track_focus.png');
+}
+
+.navbar-list .btn-save {
+    background-image: url('../newImg/save.png');
+}
+
+.navbar-list .btn-save--focus {
+    background-image: url('../newImg/save_focus.png');
+}
+
+.navbar-list .btn-animation {
+    background-image: url('../newImg/animation.png');
+}
+
+.navbar-list .btn-animation--focus {
+    background-image: url('../newImg/animation_focus.png');
+}
+
+.navbar-list .arrow--left {
+    background-image: url('../newImg/right.png');
+}
+
+.navbar-list .arrow--right {
+    background-image: url('../newImg/left.png');
+}
+
+.navbar-list li p {
+    font-size: .8rem;
+    margin-top: .1rem;
+}
+
+.navbar-list .bottom {
+    margin-bottom: 0.75rem;
+    text-align: center;
+}
+
+.navbar-list .bottom a {
+    color: #fff;
+}
+
+/* 导航内容面板样式区域 */
+.navbar-kanban {
+    width: 15.5rem;
+
+    /* 图层叠加顺序 */
+    z-index: 60;
+
+    /* 定位样式 */
+    position: absolute;
+    top: 0.10rem;
+    left: 0.15rem;
+    bottom: 5.0rem;
+    border-radius: 0.25rem;
+
+    /* 背景样式 */
+    background-color: rgba(5, 14, 31, .8);
+    display: none;
+}
+
+.navbar-kanban .navbar-kanban-header {
+    width: 100%;
+    height: 2rem;
+    background-color: rgba(5, 14, 31, .8);
+    line-height: 1.5rem;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+
+    background-image: url('../newImg/navbar_header.png');
+    background-size: cover;
+    position: relative;
+}
+
+.navbar-kanban .navbar-kanban-Title {
+    color: #01beff;
+    font-size: 0.9rem;
+    font-weight: bolder;
+    text-align: center;
+    line-height: 2rem;
+    font-family: 微软雅黑;
+}
+
+.navbar-kanban-clear {
+    position: absolute;
+    right: 0.4rem;
+    bottom: 0.2rem;
+}
+
+.navbar-kanban-clear:after {
+    height: 1.5rem;
+    width: 2rem;
+    color: #0A79A6;
+    content: "✖";
+}
+
+.navbar-kanban .navbar-kanban-content {
+}
+
+.navbar-kanban dl {
+    clear: both;
+    font-size: 0.6rem;
+}
+
+.navbar-kanban dt {
+    height: 5.1rem;
+    float: left;
+    width: 3.65rem;
+    text-align: center;
+    margin-right: 0.5rem;
+}
+
+.navbar-kanban dt img {
+    margin-top: 1.25rem;
+}
+
+.navbar-kanban dd.dd_01 {
+    color: #3698ec;
+    font-weight: bold;
+    line-height: 1.5rem;
+    height: 1.5rem;
+    padding-top: 0.5rem;
+}
+
+.navbar-kanban dd.dd_02, .navbar-kanban dd.dd_02 a {
+    color: #737373;
+    font-weight: normal;
+}
+
+.navbar-kanban .navbar-kanban-page {
+    color: #333;
+    display: none;
+}
+
+.navbar-kanban .page-active {
+    display: inherit;
+}
+
+.navbar-kanban .navbar-kanban-child {
+    color: #fff;
+    display: none;
+}
+
+.navbar-kanban .page-active {
+    display: inherit;
+}
+
+.navbar-kanban-page .favHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0.25rem 0.1rem;
+    color: #fff;
+}
+
+.navbar-kanban-page .lib_Tab_01 {
+    border-bottom: 0.05rem solid #295C78;
+}
+
+.navbar-kanban-bigaction {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* 导航内容面板样式区域 */
+.clue-kanban {
+    width: 15.5rem;
+
+    /* 图层叠加顺序 */
+    z-index: 60;
+
+    /* 定位样式 */
+    position: absolute;
+    top: 0.10rem;
+    left: 15.8rem;
+    bottom: 5.0rem;
+    border-radius: 0.25rem;
+
+    /* 背景样式 */
+    background-color: rgba(5, 14, 31, .8);
+    display: none;
+}
+
+.clue-kanban .clue-kanban-header {
+    width: 100%;
+    height: 2rem;
+    background-color: rgba(5, 14, 31, .8);
+    line-height: 1.5rem;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+
+    background-image: url('../newImg/navbar_header.png');
+    background-size: cover;
+    position: relative;
+}
+
+.clue-kanban .clue-kanban-Title {
+    color: #01beff;
+    font-size: 0.9rem;
+    font-weight: bolder;
+    text-align: center;
+    line-height: 2rem;
+    font-family: 微软雅黑;
+}
+
+.clue-kanban-clear {
+    position: absolute;
+    right: 0.4rem;
+    bottom: 0.2rem;
+}
+
+.clue-kanban-clear:after {
+    height: 1.5rem;
+    width: 2rem;
+    color: #0A79A6;
+    content: "✖";
+}
+
+.clue-kanban .clue-kanban-content {
+}
+
+.clue-kanban dl {
+    clear: both;
+    font-size: 0.6rem;
+}
+
+.clue-kanban dt {
+    height: 5.1rem;
+    float: left;
+    width: 3.65rem;
+    text-align: center;
+    margin-right: 0.5rem;
+}
+
+.clue-kanban dt img {
+    margin-top: 1.25rem;
+}
+
+.clue-kanban dd.dd_01 {
+    color: #3698ec;
+    font-weight: bold;
+    line-height: 1.5rem;
+    height: 1.5rem;
+    padding-top: 0.5rem;
+}
+
+.clue-kanban dd.dd_02, .clue-kanban dd.dd_02 a {
+    color: #737373;
+    font-weight: normal;
+}
+
+.clue-kanban .clue-kanban-page {
+    color: #333;
+    display: none;
+}
+
+.clue-kanban .page-active {
+    display: inherit;
+}
+
+.clue-kanban .clue-kanban-child {
+    color: #fff;
+    display: none;
+}
+
+.clue-kanban .page-active {
+    display: inherit;
+}
+
+.clue-kanban-page .favHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0.25rem 0.1rem;
+    color: #fff;
+}
+
+.clue-kanban-page .lib_Tab_01 {
+    border-bottom: 0.05rem solid #295C78;
+}
+
+.clue-kanban-bigaction {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.favHeader > div {
+    font-size: 0.7rem;
+    margin-left: 0.25rem;
+}
+
+.favHeader .control {
+    font-size: 0.6rem;
+    color: #01beff;
+}
+
+.favHeader .control span {
+    padding: 0 0.15rem;
+    cursor: pointer;
+}
+
+/* 搜索部分 */
+.searchCategory {
+    width: 100%;
+    height: 1.5rem;
+    text-align: center;
+}
+
+.searchCategoryBtn {
+    margin-left: 5%;
+    width: 30%;
+    height: 1rem;
+    box-sizing: border-box;
+    border: 0.05rem solid #09AAE5;
+    padding: 0.25rem 0.75rem;
+    color: #09AAE5;
+    border-radius: 0.1rem;
+}
+
+.searchCategoryBtn:hover {
+    background-color: #09AAE5;
+    color: rgba(5, 14, 31, 1);
+}
+
+.searchCategoryBtn--active {
+    background-color: #09AAE5;
+    color: rgba(5, 14, 31, 1);
+}
+
+.searchCategoryBtn:first-child {
+    margin-left: 0;
+}
+
+/* 辅助看板样式区域 */
+.assist-kanban {
+    width: 15.0rem;
+
+    /* 图层叠加顺序 */
+    z-index: 60;
+
+    /* 定位样式 */
+    position: absolute;
+    top: 2.0rem;
+    right: 0.25rem;
+    bottom: 5rem;
+
+    /* 背景样式 */
+    background-color: rgba(5, 14, 31, .8);
+
+    display: none;
+
+    border-radius: 0.2rem;
+}
+
+.assist-kanban .assist-kanban-header {
+    width: 100%;
+    height: 1.5rem;
+    background-color: rgba(5, 14, 31, .8);
+    line-height: 1.5rem;
+    border-top-left-radius: 0.2rem;
+    border-top-right-radius: 0.2rem;
+}
+
+.assist-kanban-header span {
+    color: #eee;
+    margin-left: 0.75rem;
+    font-size: 0.7rem;
+    font-weight: bolder;
+}
+
+.assist-kanban-header .navbar-kanban-clear {
+    top: 0;
+}
+
+.assist-kanban .assist-kanban-page {
+    color: #fff;
+    display: none;
+}
+
+.assist-kanban .page-active {
+    display: inherit;
+}
+
+.assist-kanban .assist-kanban-content {
+    border-bottom-left-radius: 0.2rem;
+    border-bottom-right-radius: 0.2rem;
+}
+
+.assist-kanban-content .result-layers {
+    border-bottom: 1rem solid rgba(5, 14, 31, .8);
+}
+
+.assist-kanban-content .assistResult__title {
+    padding: 0.2rem;
+    font-size: 0.65rem;
+    text-align: center;
+    letter-spacing: 0.1rem;
+}
+
+.assistResult__title b {
+    font-size: 0.75rem;
+    color: #01beff;
+}
+
+.assist-kanban-content .assistStatResult__stat {
+    display: table;
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 0.8rem;
+}
+
+.assistStatResult__stat li {
+    display: table-row;
+    width: 100%;
+}
+
+.assistStatResult__stat .li-element {
+    display: table-cell;
+    padding: 0.4rem 0.25rem;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+.assistStatResult__stat .li-element__1 {
+    width: 5%;
+}
+
+.assistStatResult__stat .li-element__2 {
+    width: 20%;
+}
+
+.assistStatResult__stat .li-element__3 {
+    width: 75%;
+    position: relative;
+}
+
+.assistStatResult__stat .rect__graph {
+    height: 0.75rem;
+    background-color: #d9534f;
+}
+
+.assistStatResult__stat .rect__num {
+    position: absolute;
+    left: 80%;
+    top: 0;
+    margin-left: 0.3rem;
+    transform: translate(0, 50%);
+    height: 0.9rem;
+    line-height: 0.9rem;
+}
+
+.assistListResult__footer {
+    margin-top: 0.3rem;
+}
+
+/* 右侧地图样式 */
+.content .right {
+    flex-grow: 2;
+
+    /* flexbox方案处理分栏布局 */
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.right .links {
+    position: absolute;
+    right: 0.75rem;
+    top: 2.5rem;
+}
+
+/* 工具条样式 */
+.content .toolbar {
+    position: absolute;
+    z-index: 5;
+
+    top: .30rem;
+    right: .30rem;
+
+}
+
+.toolbar_01 {
+    float: left;
+    width: 4.5rem;
+    height: 1.5rem;
+
+    position: relative;
+    display: inline;
+    z-index: 50;
+
+    background-color: rgba(5, 14, 31, .8);
+}
+
+.toolbar_01 span {
+    color: #01beff;
+}
+
+.toolbar_01 a {
+    cursor: pointer;
+    display: block;
+    height: 1.25rem;
+    line-height: 1.25rem;
+    overflow: hidden;
+    text-align: left;
+    color: #04B6F3;
+    text-align: left;
+}
+
+.toolbar_01 a:hover {
+    color: #3698ec;
+    cursor: pointer;
+}
+
+.toolbar_02 {
+    float: right;
+
+    background-color: rgba(5, 14, 31, .8);
+}
+
+.toolbar_02 input[type='checkbox'] {
+    border: 0.05rem solid #ccc;
+}
+
+.toolbar_02 i, .toolbar_01 i {
+    font-size: 0.6rem;
+    margin-left: 0.2rem;
+    color: #fff;
+    margin-right: 0.15rem;
+}
+
+.toolbar_02 .icon {
+    display: block;
+    width: 0.7rem;
+    height: 0.7rem;
+    background-size: contain;
+}
+
+.toolbar_02 .icon-roadstatus {
+    background-image: url('../newImg/toolbar/roadstatus.png');
+}
+
+.toolbar_02 .icon-roadstatus--focus {
+    background-image: url('../newImg/toolbar/roadstatus--focus.png');
+}
+
+.toolbar_02 .icon-heatmap {
+    background-image: url('../newImg/toolbar/heatmap.png');
+}
+
+.toolbar_02 .icon-heatmap--focus {
+    background-image: url('../newImg/toolbar/heatmap--focus.png');
+}
+
+.toolbar_02 .icon-drawtools {
+    background-image: url('../newImg/toolbar/drawtools.png');
+}
+
+.toolbar_02 .icon-drawtools--focus {
+    background-image: url('../newImg/toolbar/drawtools--focus.png');
+}
+
+.toolbar_02 .icon-maptools {
+    background-image: url('../newImg/toolbar/maptools.png');
+}
+
+.toolbar_02 .icon-maptools--focus {
+    background-image: url('../newImg/toolbar/maptools--focus.png');
+}
+
+.toolbar_02 .icon-cleartool {
+    background-image: url('../newImg/toolbar/cleartool.png');
+}
+
+.toolbar_02 .icon-cleartool--focus {
+    background-image: url('../newImg/toolbar/cleartool--focus.png');
+}
+
+.toolbar_02 .icon-fullscreen {
+    background-image: url('../newImg/toolbar/fullscreen.png');
+}
+
+.toolbar_02 .icon-fullscreen--focus {
+    background-image: url('../newImg/toolbar/fullscreen--focus.png');
+}
+
+.toolbar_02 a span {
+    display: block;
+    margin-left: 0.3rem;
+}
+
+.toolbar_02 dt {
+    float: left;
+    margin-right: 0.5rem;
+}
+
+.toolbar_02 dt img {
+    vertical-align: middle;
+}
+
+.toolbar_02 dd {
+    float: left;
+    border-left: 0.05rem solid #E6E4DE;
+
+    height: 1.5rem;
+    line-height: 1.5rem;
+    padding: 0 0.5rem;
+}
+
+.toolbar_02 dd a {
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    align-items: center;
+    font-size: 0.7rem;
+    width: 100%;
+    height: 100%;
+}
+
+.toolbar_02 dd a img {
+    margin-left: 0.2rem;
+    margin-right: 0.2rem;
+    margin-top: 0.15rem;
+}
+
+.toolbar_02 dd a:hover {
+    color: #3698ec !important;
+    cursor: pointer;
+}
+
+/* 统计图样式区域 */
+.content .statistics {
+    /* 定位方式 */
+    position: absolute;
+    top: 3rem;
+    right: -25rem;
+
+    z-index: 70;
+
+    /* flexbox方案 */
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.statistics .statisticsBtnFlag {
+    width: 1.5rem;
+    height: 7.5rem;
+
+    background-color: rgba(5, 14, 31, .8);
+
+    margin-right: 0.1rem;
+}
+
+.statistics .statisticsBtn-header {
+
+    width: 1.5rem;
+    height: 1.5rem;
+
+    background-color: rgba(5, 14, 31, .8);
+
+    font-size: 1.5rem;
+    color: white;
+    line-height: 0.8;
+    text-align: center;
+}
+
+.statistics .statisticsBtn-title {
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: bolder;
+    min-width: 0.8rem;
+    padding: 1rem 0;
+    color: #DDA445;
+}
+
+.statistics .statisticsContent {
+    width: 26rem;
+    height: 30rem;
+
+    background-color: rgba(5, 14, 31, .8);
+}
+
+.statistics .statisticsContent-header {
+    width: 100%;
+    height: 1.5rem;
+    background-color: rgba(5, 14, 31, .8);
+}
+
+.statistics .statisticsContent-row {
+    width: 100%;
+    padding: 0.25rem 0;
+}
+
+.statistics .statisticsRow-header {
+    /* flexbox解决方案 */
+    display: flex;
+    justify-content: space-between;
+}
+
+.statistics .statisticsRow-header-left {
+    color: white;
+    padding-left: 0.5rem;
+    font-size: 0.7rem;
+    font-family: 微软雅黑;
+}
+
+.statistics .statisticsRow-header-left::before {
+    content: "";
+    border-left: 0.25rem solid #61524D;
+    border-right: 0.25rem solid #FFBB44;
+    margin-right: 1rem;
+}
+
+.statistics .statisticsRow-header-right {
+    margin-right: 4rem;
+    color: #01beff;
+}
+
+.statistics .statisticsRow-content {
+    box-sizing: border-box;
+    padding: 0.25rem 0.5rem;
+    width: 100%;
+}
+
+.statistics .statisticsImgArea {
+    height: 7.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+}
+
+.statistics .statisticsImgArea-half {
+    width: 50%;
+    float: left;
+}
+
+.statistics .statisticsImgArea-full {
+    width: 100%;
+    clear: both;
+}
+
+.statistics .statisticsImgTitle {
+    color: #B3B2B8;
+    padding-left: 1.5rem;
+    font-size: 0.7rem;
+    font-family: 微软雅黑;
+}
+
+.statistics .statisticsImgImg {
+    width: 100%;
+    height: 100%;
+    flex-grow: 2;
+}
+
+.statistics .statisticsImgImg div {
+    height: 100%;
+}
+
+/* 地图样式设置 */
+.content .mapcontent {
+    width: 100%;
+    background: #F5F4ED;
+    background-image: linear-gradient(hsla(0, 0%, 100%, .7) 0.1rem, transparent 0),
+    linear-gradient(90deg, hsla(0, 0%, 100%, .7) 0.1rem, transparent 0),
+    linear-gradient(hsla(0, 0%, 100%, .3) 0.05rem, transparent 0),
+    linear-gradient(90deg, hsla(0, 0%, 100%, .3) 0.05rem, transparent 0);
+    background-size: 12.8rem 12.8rem, 12.8rem 12.8rem, 0.8rem 0.8rem, 0.8rem 0.8rem;
+}
+
+/* footer 样式布局区域 */
+.footer {
+    height: 35rem;
+    width: 100%;
+
+    /* 背景颜色 */
+    background-color: rgba(5, 14, 31, 1);
+    display: flex;
+
+}
+
+.footer .footer-header {
+    width: 3rem;
+    text-align: center;
+    height: 100%;
+    padding: 0.6rem 0.2rem;
+    font-size: 0.8rem;
+    color: #9496A0;
+    background-color: #081C3B;
+}
+
+.content_l h2 {
+    height: 1.25rem;
+    border-bottom: 0.05rem solid #f1f3f5;
+    line-height: 1.25rem;
+    font-weight: normal;
+}
+
+.content_l h2 .a7 {
+    float: left;
+    font-size: 0.7rem;
+    background: url(../images/icon_03.png) left 0.25rem no-repeat;
+    padding-left: 1.3rem;
+    color: #737373;
+    margin-left: 0.5rem;
+    display: inline;
+}
+
+.content_l h2 .a8 {
+    float: right;
+    font-size: 0.7rem;
+    background: url(../images/icon_04.png) left 0.25rem no-repeat;
+    padding-left: 1.1rem;
+    color: #737373;
+    margin-right: 0.5rem;
+    display: inline;
+}
+
+/* 底部样式 */
+.template_doneLayer {
+    display: none;
+}
+
+.template_popup {
+    display: none;
+}
+
+.template_on_video {
+    margin-top: 1.5rem;
+    margin-bottom: 0.25rem;
+}
+
+.template_video_single {
+    padding: 0.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.template_video_single span {
+    margin-right: 1rem;
+}
+
+.template_video_single button {
+    border: none;
+    padding: 0.05rem 0.2rem;
+}
+
+.template_videoj {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.template_videoj_single {
+    padding: 0.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.template_videoj_single > div {
+    margin-left: 0.5rem;
+}
+
+.template_videoj_single span {
+    margin-right: 1rem;
+    font-size: 0.7rem;
+}
+
+.template_videoj_single h4 {
+    max-width: 10rem;
+    color: #01beff;
+    font-size: .7rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+.template_videoj_single a {
+    /* background-color: gray; */
+    color: #FFF !important;
+    cursor: pointer;
+    border: none;
+    padding: 0.05rem 0.2rem;
+    text-decoration: none;
+    margin-left: 0.75rem;
+}
+
+.template_videoj_single a[STATUS='离线'] {
+    background-color: blue;
+}
+
+.template_videoj_single a[STATUS='离线'] {
+    background-color: grey;
+}
+
+.template_videoj_single a:hover {
+    color: #FFF !important;
+    text-decoration: none;
+}
+
+@keyframes statistic-right-left {
+    0% {
+        right: -25rem;
+    }
+    100% {
+        right: 0.5rem;
+    }
+}
+
+@keyframes statistic-left-right {
+    0% {
+        right: 0.5rem;
+    }
+    100% {
+        right: -25rem;
+    }
+}
+
+@keyframes navbar-left-right {
+    0% {
+        left: -25rem;
+    }
+    100% {
+        left: 0;
+    }
+}
+
+@keyframes navbar-right-left {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: -25rem;
+    }
+}
+
+@keyframes kanbanin {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes kanbanout {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(0);
+    }
+}
+

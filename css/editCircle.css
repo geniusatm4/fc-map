@@ -1,0 +1,11 @@
+.ez-editCircle-btn {
+    margin-left: -15.5px;
+    margin-top: -9.5px;
+    width: 31px;
+    height: 19px;
+    background-image: url(../mapClient/area_btn01.png);
+}
+
+.ez-editCircle-btn:hover {
+    background-image: url(../mapClient/area_btn02.png);
+}
